@@ -37,6 +37,9 @@ Source102:     https://keys.openpgp.org/vks/v1/by-fingerprint/12BB9B400EE3F77282
 # Sean Whitton
 Source103:     https://keys.openpgp.org/vks/v1/by-fingerprint/8DC2487E51ABDD90B5C4753F0F56D0553B6D411B
 
+# Emacs release key
+Source104:     https://keys.openpgp.org/vks/v1/by-fingerprint/9B917007AE030E36E4FC248B695B7AE4BF066240
+
 Source4:       dotemacs.el
 Source5:       site-start.el
 Source6:       default.el
@@ -324,7 +327,7 @@ Development header files for Emacs.
 
 
 %prep
-cat '%{SOURCE100}' '%{SOURCE101}' '%{SOURCE102}' '%{SOURCE103}' > keyring
+cat '%{SOURCE100}' '%{SOURCE101}' '%{SOURCE102}' '%{SOURCE103}' '%{SOURCE104}' > keyring
 %{gpgverify} --keyring=keyring --signature='%{SOURCE1}' --data='%{SOURCE0}'
 rm keyring
 
